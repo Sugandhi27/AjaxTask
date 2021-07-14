@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="taskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="dbCity">
+    <Key>
+      <PropertyRef Name="cityid" />
+    </Key>
+    <Property Name="cityid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cityname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="dbCountry">
+    <Key>
+      <PropertyRef Name="cid" />
+    </Key>
+    <Property Name="cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="dbState">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cid" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="taskEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dbCities" EntityType="Self.dbCity" />
+    <EntitySet Name="dbCountries" EntityType="Self.dbCountry" />
+    <EntitySet Name="dbStates" EntityType="Self.dbState" />
+  </EntityContainer>
+</Schema>

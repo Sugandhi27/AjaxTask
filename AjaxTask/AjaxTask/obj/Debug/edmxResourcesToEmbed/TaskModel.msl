@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="taskModelStoreContainer" CdmEntityContainer="taskEntities">
+    <EntitySetMapping Name="dbCities">
+      <EntityTypeMapping TypeName="taskModel.dbCity">
+        <MappingFragment StoreEntitySet="dbCity">
+          <ScalarProperty Name="cityid" ColumnName="cityid" />
+          <ScalarProperty Name="cityname" ColumnName="cityname" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dbCountries">
+      <EntityTypeMapping TypeName="taskModel.dbCountry">
+        <MappingFragment StoreEntitySet="dbCountry">
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="cname" ColumnName="cname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dbStates">
+      <EntityTypeMapping TypeName="taskModel.dbState">
+        <MappingFragment StoreEntitySet="dbState">
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
